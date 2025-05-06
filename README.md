@@ -53,6 +53,7 @@ jobs:
 - 🇫🇷 French (fr)
 - 🇪🇸 Spanish (es)
 - 🇩🇪 German (de)
+- Other languages supported by Mistral AI
 
 ## 💻 Local Development
 
@@ -84,9 +85,6 @@ python src/main.py
 - Pillow (Python Imaging Library)
 - requests
 
-## 🖼️ Font Credits
-
-This project uses the Roboto font family, which is licensed under the Apache License, Version 2.0.
 
 ## 📄 License
 
