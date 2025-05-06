@@ -5,7 +5,7 @@ import random
 import datetime
 
 try:
-    MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
+    MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY","xz2g0Dms6Evlww1bCGdZLFJB2Q7fAWlg")
     MODEL = os.getenv("MODEL", "mistral-small-latest")
     TOPICS = os.getenv("TOPICS", "History, Computers, Science, Technology, Art, Music, Literature, Sports, Nature, Food, Duck").split(",")
     for i in range(len(TOPICS)):
@@ -13,6 +13,15 @@ try:
     TEMPERATURE = float(os.getenv("TEMPERATURE", 0.7))
     MAX_TOKENS = int(os.getenv("MAX_TOKENS", 1000))
     OUTPUT_PATH = os.getenv("OUTPUT_PATH", "output_image.png")
+    # check if the output path have a .png extension
+    if not OUTPUT_PATH.endswith(".png"):
+        print("Error: OUTPUT_PATH must have a .png extension")
+        exit(1)
+    # check if the output path have parent directory
+    DIRS = os.path.dirname(OUTPUT_PATH)
+    if DIRS and not os.path.exists(DIRS):
+        os.makedirs(DIRS)
+        
     LANGUAGE = os.getenv("LANGUAGE", "en")
 except:
     print("Error: Environment variables not set. Please set MISTRAL_API_KEY, MODEL, TOPICS, TEMPERATURE, and MAX_TOKENS.")

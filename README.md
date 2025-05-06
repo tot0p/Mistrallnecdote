@@ -14,6 +14,22 @@ A GitHub Action that generates daily historical anecdotes using Mistral AI and c
 
 ## 🚀 Usage
 
+To use this action, you'll need to:
+
+1. Set up the required permissions in your workflow
+2. Add the action configuration
+
+### Required Permissions
+
+Make sure to add the following permissions to your workflow to allow the action to write files:
+
+```yaml
+permissions:
+  contents: write  # Required to write the generated image file
+```
+
+### Workflow Example
+
 Add this GitHub Action to your workflow:
 
 ```yaml
@@ -22,6 +38,9 @@ on:
   schedule:
     - cron: '0 0 * * *'  # Runs daily at midnight
   workflow_dispatch:      # Allows manual trigger
+
+permissions:
+  contents: write  # Required to write the generated image file
 
 jobs:
   generate:
@@ -32,8 +51,14 @@ jobs:
           mistral_api_key: ${{ secrets.MISTRAL_API_KEY }}
           OUTPUT_PATH: "anecdotes/daily.png"
           topics: "History, Technology, Science, Art"
-          language: "en" 
+          language: "en"
 ```
+
+### Example Output
+
+Here's an example of a generated anecdote image:
+
+![Example Anecdote](anecdotes/daily.png)
 
 ## ⚙️ Configuration
 
