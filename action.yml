@@ -1,6 +1,9 @@
 name : "Mistrallnecdote"
 description : "A Github Action to run Mistral for have a anecdote generation on a given topic"
 author : "tot0p"
+branding:
+  icon: "rocket"
+  color: "blue"
 
 inputs:
   mistral_api_key:
@@ -36,7 +39,7 @@ permission:
   id-token: write
 
 runs:
-  using: "python"
+  using: "composite"
   steps:
     - name: Checkout code
       uses: actions/checkout@v3
