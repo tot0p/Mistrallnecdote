@@ -27,7 +27,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: tot0p/Mistrallnecdote@main
+      - uses: tot0p/Mistrallnecdote@v1.0.0
         with:
           mistral_api_key: ${{ secrets.MISTRAL_API_KEY }}
           OUTPUT_PATH: "anecdotes/daily.png"

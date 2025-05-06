@@ -1,0 +1,22 @@
+name: Daily Historical Anecdotes
+on:
+  push:
+    branches:
+      - main
+  # Runs every day at midnight
+  schedule:
+    - cron: '0 0 * * *'
+  
+
+jobs:
+  daily-anecdote:
+    runs-on: ubuntu-latest
+    name: Generate Daily Anecdote
+    steps:
+      - name: Generate Historical Anecdote
+        uses: tot0p/Mistrallnecdote@main
+        with:
+          mistral_api_key: ${{ secrets.MISTRAL_API_KEY }}
+          OUTPUT_PATH: "anecdotes/daily.png"
+          topics: 'History, Technology, Science, Art'
+          language: 'en'
