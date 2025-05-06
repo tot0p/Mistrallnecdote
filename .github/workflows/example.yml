@@ -17,6 +17,5 @@ jobs:
         uses: tot0p/Mistrallnecdote@main
         with:
           mistral_api_key: ${{ secrets.MISTRAL_API_KEY }}
-          OUTPUT_PATH: "anecdotes/daily.png"
           topics: 'History, Technology, Science, Art'
           language: 'en'
