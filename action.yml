@@ -2,7 +2,7 @@ name: "Mistrallnecdote"
 description: "A Github Action to run Mistral for anecdote generation on a given topic"
 author: "tot0p"
 branding:
-  icon: "rocket"
+  icon: "light"
   color: "blue"
 
 inputs:
