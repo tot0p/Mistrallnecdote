@@ -5,7 +5,7 @@ import random
 import datetime
 
 try:
-    MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY","xz2g0Dms6Evlww1bCGdZLFJB2Q7fAWlg")
+    MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY","")
     MODEL = os.getenv("MODEL", "mistral-small-latest")
     TOPICS = os.getenv("TOPICS", "History, Computers, Science, Technology, Art, Music, Literature, Sports, Nature, Food, Duck").split(",")
     for i in range(len(TOPICS)):
